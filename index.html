@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: #7ebdb4;
+            }
+            .p1{
+                display: inline-block;
+                padding-right: 20px;
+            }
+        </style>
+       <script>
+           var p1=0,p2=0;
+
+           
+    var a=prompt("Terms and Conditions!...each player has particular number of chances to throw the dice and keep on observing the score and whose chance is next !after both players chances are completed press the know winner button to know the winner....now enter number of times u want to throw the dice");
+    var ch1=a,ch2=a;
+   
+    var win;
+    win=document.querySelectorAll("h1")[2];
+    var sc;
+    sc=document.querySelectorAll("h1")[3];
+    var ch;
+    
+    
+
+function fun1(){  
+var rn1=Math.random();
+rn1=Math.floor(rn1*6)+1;
+var img1= "pic" + rn1 + ".png";
+var dis1= document.querySelectorAll("img")[0];
+dis1.setAttribute("src",img1);
+
+ch1--;
+
+if(ch1>=0)
+{
+    p1=p1+rn1;
+document.querySelectorAll("h1")[1].innerHTML= " player1 has more "+ch1+" chances";
+}
+else
+{
+    alert("player1  chances are completed.. ");
+document.querySelectorAll("h1")[1].innerHTML= " player1  chances are completed.. ";
+
+}
+var sc1=document.querySelectorAll("h1")[3];
+sc1.innerHTML="score: player1 = "+p1+" player2 = "+p2;
+var k1=document.querySelectorAll("h1")[2];
+k1.innerHTML="now its player2 chance ";
+
+}
+function fun2()
+{
+var rn2=Math.random();
+rn2=Math.floor(rn2*6)+1;
+var img2= "pic" + rn2 + ".png";
+var dis2= document.querySelectorAll("img")[1];
+dis2.setAttribute("src",img2);
+ch2--;
+
+if(ch2>=0)
+{
+    p2=p2+rn2;
+document.querySelectorAll("h1")[1].innerHTML= " player2 has more "+ch2+" chances";
+
+}
+else
+{
+    alert("player2  chances are completed.. ");
+document.querySelectorAll("h1")[1].innerHTML= " player2  chances are completed.. ";
+}
+var sc2=document.querySelectorAll("h1")[3];
+sc2.innerHTML="score: player1 = "+p1+" player2 = "+p2;
+var k2=document.querySelectorAll("h1")[2];
+k2.innerHTML="now its player1 chance ";
+
+
+}
+function fun3()
+{
+    var win1=document.querySelectorAll("h1")[2];
+if(p1>p2)
+win1.innerHTML="player1 wins!! congragulations!!!!!";
+else if(p1<p2)
+win1.innerHTML="player2 wins!! congragulations!!!!!";
+else if(p1==p2)
+win1.innerHTML=" game is draw";
+
+}
+       </script>
+    </head>
+    <body>
+        <h1 style="text-align: center;font: size 50px; color: #27496d;">DICE CHALLENGE</h1>
+        <h1 style="text-align: center;font: size 50px; color: #0779e4;">Try to win the game..All the best</h1>
+        <h1 style="text-align: center;font: size 50px;color: #222831;">Start Playing! player1 starts the game..</h1>
+        <h1 style="text-align: center;font: size 50px;color: crimson;">Score : player1=0,player2=0</h1>
+        
+        
+        <div style="text-align: center;">
+            <div class="p1">
+                <p>player1</p>
+                <img src="pic6.png"><br><br>
+                <button type="button" onclick="fun1()">player1</button>
+            </div>
+            <div class="p1">
+                <p>player2</p>
+                <img src="pic6.png"><br><br>
+                <button type="submit" onclick="fun2()">player2</button>
+            </div>
+
+        </div><br><br>
+        <div style="text-align: center;">
+            <button type="submit" onclick="fun3()">know winner</button>
+        </div>
+            
+    
+    </body>
+</html>
